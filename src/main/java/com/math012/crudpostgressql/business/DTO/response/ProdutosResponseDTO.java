@@ -1,10 +1,17 @@
 package com.math012.crudpostgressql.business.DTO.response;
 
-public class ProdutosResponseDTO {
+import lombok.*;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
+@Builder
+public class ProdutosResponseDTO {
     private Long id;
     private String nome;
+    private String descricao;
     private String preco;
-    private Long categoriaId;
-    private CategoriasResponseDTO categorias;
 }
