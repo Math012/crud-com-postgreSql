@@ -9,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Builder
 @Entity(name = "produto")
 public class Produtos {
 

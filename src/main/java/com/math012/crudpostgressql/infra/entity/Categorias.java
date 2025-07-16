@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Builder
 @Entity(name = "categoria")
 public class Categorias {
 
