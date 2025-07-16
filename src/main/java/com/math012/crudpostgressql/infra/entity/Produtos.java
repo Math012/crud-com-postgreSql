@@ -24,10 +24,7 @@ public class Produtos {
     @Column(name = "preço")
     private String preco;
 
-    @JsonIgnore
-    @Column(name = "categoria_id")
-    private Long categoriaId;
 
-    @ManyToOne
-    private Categorias categorias;
+
+
 }
