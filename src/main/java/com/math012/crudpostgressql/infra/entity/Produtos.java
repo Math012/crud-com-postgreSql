@@ -21,10 +21,9 @@ public class Produtos {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "descricao")
+    private String descricao;
+
     @Column(name = "preço")
     private String preco;
-
-
-
-
 }
