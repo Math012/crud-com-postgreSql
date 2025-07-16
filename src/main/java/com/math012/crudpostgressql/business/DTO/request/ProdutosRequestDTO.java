@@ -12,5 +12,5 @@ import lombok.*;
 public class ProdutosRequestDTO {
     private String nome;
     private String descricao;
-    private String preco;
+    private Double preco;
 }

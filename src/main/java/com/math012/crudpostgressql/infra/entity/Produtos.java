@@ -25,5 +25,5 @@ public class Produtos {
     private String descricao;
 
     @Column(name = "preço")
-    private String preco;
+    private Double preco;
 }

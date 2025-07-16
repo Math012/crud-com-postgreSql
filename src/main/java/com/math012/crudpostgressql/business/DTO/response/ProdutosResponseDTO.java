@@ -13,5 +13,5 @@ public class ProdutosResponseDTO {
     private Long id;
     private String nome;
     private String descricao;
-    private String preco;
+    private Double preco;
 }
