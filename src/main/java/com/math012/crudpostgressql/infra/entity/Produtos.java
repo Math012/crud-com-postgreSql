@@ -1,5 +1,6 @@
 package com.math012.crudpostgressql.infra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,7 @@ public class Produtos {
     @Column(name = "preço")
     private String preco;
 
+    @JsonIgnore
     @Column(name = "categoria_id")
     private Long categoriaId;
 
