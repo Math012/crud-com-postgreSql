@@ -11,6 +11,6 @@ import lombok.*;
 @Builder
 public class ProdutosRequestDTO {
     private String nome;
+    private String descricao;
     private String preco;
-    private CategoriasRequestDTO categorias;
 }
