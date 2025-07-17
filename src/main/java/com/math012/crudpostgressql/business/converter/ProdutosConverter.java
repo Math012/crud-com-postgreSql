@@ -10,6 +10,14 @@ import java.util.List;
 @Component
 public class ProdutosConverter {
 
+    public Produtos paraProdutoVindoDeProdutosRequestDTO(ProdutosRequestDTO produtosRequestDTO){
+        return Produtos.builder()
+                .nome(produtosRequestDTO.getNome())
+                .descricao(produtosRequestDTO.getDescricao())
+                .preco(produtosRequestDTO.getPreco())
+                .build();
+    }
+
     public ProdutosResponseDTO paraProdutosResponseVindoDeProduto(Produtos produtos){
         return ProdutosResponseDTO
                 .builder()
@@ -20,15 +28,11 @@ public class ProdutosConverter {
                 .build();
     }
 
-    public Produtos paraProdutoVindoDeProdutosRequestDTO(ProdutosRequestDTO produtosRequestDTO){
-        return Produtos.builder()
-                .nome(produtosRequestDTO.getNome())
-                .descricao(produtosRequestDTO.getDescricao())
-                .preco(produtosRequestDTO.getPreco())
-                .build();
-    }
-
     public List<Produtos> paraListaProdutosVindoDeListaProdutosRequestDTO(List<ProdutosRequestDTO> produtosRequestDTOList){
         return produtosRequestDTOList.stream().map(this::paraProdutoVindoDeProdutosRequestDTO).toList();
+    }
+
+    public List<ProdutosResponseDTO> paraListaProdutosResponseDTOVindoDeListaProdutos(List<Produtos> produtosList){
+        return produtosList.stream().map(this::paraProdutosResponseVindoDeProduto).toList();
     }
 }
