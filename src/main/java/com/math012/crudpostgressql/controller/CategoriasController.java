@@ -16,6 +16,7 @@ public class CategoriasController {
 
     private final CategoriasService service;
 
+
     @GetMapping
     public ResponseEntity<List<CategoriasResponseDTO>> todasCategorias(){
         return ResponseEntity.ok(service.listaProdutos());
