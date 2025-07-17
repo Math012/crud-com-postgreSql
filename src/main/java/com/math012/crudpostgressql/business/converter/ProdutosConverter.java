@@ -3,7 +3,11 @@ package com.math012.crudpostgressql.business.converter;
 import com.math012.crudpostgressql.business.DTO.request.ProdutosRequestDTO;
 import com.math012.crudpostgressql.business.DTO.response.ProdutosResponseDTO;
 import com.math012.crudpostgressql.infra.entity.Produtos;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public class ProdutosConverter {
 
     public ProdutosResponseDTO paraProdutosResponseVindoDeProduto(Produtos produtos){
@@ -22,5 +26,9 @@ public class ProdutosConverter {
                 .descricao(produtosRequestDTO.getDescricao())
                 .preco(produtosRequestDTO.getPreco())
                 .build();
+    }
+
+    public List<Produtos> paraListaProdutosVindoDeListaProdutosRequestDTO(List<ProdutosRequestDTO> produtosRequestDTOList){
+        return produtosRequestDTOList.stream().map(this::paraProdutoVindoDeProdutosRequestDTO).toList();
     }
 }
