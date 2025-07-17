@@ -6,11 +6,11 @@ import com.math012.crudpostgressql.business.converter.ProdutosConverter;
 import com.math012.crudpostgressql.business.converter.ProdutosUpdateConverter;
 import com.math012.crudpostgressql.infra.entity.Categorias;
 import com.math012.crudpostgressql.infra.entity.Produtos;
+import com.math012.crudpostgressql.infra.exceptions.RequestException;
 import com.math012.crudpostgressql.infra.exceptions.ResourceNotFoundException;
 import com.math012.crudpostgressql.infra.repository.CategoriasRepository;
 import com.math012.crudpostgressql.infra.repository.ProdutosRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public class ProdutosService {
         );
 
         if (!verifyFields(produtos)){
-            throw new ResourceNotFoundException("Erro ao salvar o produto: campos inválidos");
+            throw new RequestException("Erro ao salvar o produto: campos inválidos");
         }
 
         Produtos entityProdutos = produtosConverter.paraProdutoVindoDeProdutosRequestDTO(produtos);
