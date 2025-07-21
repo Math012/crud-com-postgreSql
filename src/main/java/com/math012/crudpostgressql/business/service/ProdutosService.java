@@ -61,10 +61,6 @@ public class ProdutosService {
                 () -> new ResourceNotFoundException("Erro: o id do produto: " + id + " não foi encontrado, tente novamente!")
         );
 
-        if (!verifyFields(produtosRequestDTO)){
-            throw new ResourceNotFoundException("Erro ao salvar o produto: campos inválidos");
-        }
-
         return produtosConverter.paraProdutosResponseVindoDeProduto(
                 produtosRepository.save(produtosUpdateConverter.atualizarProdutoEntity(produtosRequestDTO,entity)
                 ));
