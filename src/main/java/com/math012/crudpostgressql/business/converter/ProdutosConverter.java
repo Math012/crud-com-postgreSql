@@ -28,9 +28,6 @@ public class ProdutosConverter {
                 .build();
     }
 
-    public List<Produtos> paraListaProdutosVindoDeListaProdutosRequestDTO(List<ProdutosRequestDTO> produtosRequestDTOList){
-        return produtosRequestDTOList.stream().map(this::paraProdutoVindoDeProdutosRequestDTO).toList();
-    }
 
     public List<ProdutosResponseDTO> paraListaProdutosResponseDTOVindoDeListaProdutos(List<Produtos> produtosList){
         return produtosList.stream().map(this::paraProdutosResponseVindoDeProduto).toList();
