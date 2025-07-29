@@ -25,7 +25,6 @@ public class CategoriasService {
         }
         Categorias entity = repository.save(converter.paraCategoriasVindoDeCategoriasRequestDTO(categoria));
         return converter.paraCategoriasResponseDTOVindoDeCategorias(entity);
-
     }
 
     public List<CategoriasResponseDTO> listaProdutos(){
