@@ -71,7 +71,7 @@ public class CategoriasServiceTest {
         RequestException requestException = assertThrows(RequestException.class,()->{
             service.criarCategoria(categoriasRequestDTONulo);
         });
-        assertEquals("Erro ao salvar o produto: campos inválidos",requestException.getMessage());
+        assertEquals("Erro ao salvar a categoria: campos inválidos",requestException.getMessage());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CategoriasServiceTest {
         RequestException requestException = assertThrows(RequestException.class,()->{
             service.criarCategoria(categoriasRequestDTOVazio);
         });
-        assertEquals("Erro ao salvar o produto: campos inválidos",requestException.getMessage());
+        assertEquals("Erro ao salvar a categoria: campos inválidos",requestException.getMessage());
     }
 
     @Test
