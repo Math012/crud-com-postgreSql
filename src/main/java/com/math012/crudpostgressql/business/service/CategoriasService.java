@@ -19,15 +19,20 @@ public class CategoriasService {
 
     private final CategoriasConverter converter;
 
-    public CategoriasResponseDTO criarCategoria(CategoriasRequestDTO categoria){
-        if (!verifyFields(categoria)){
-            throw new RequestException("Erro ao salvar o produto: campos inválidos");
+    public CategoriasResponseDTO criarCategoria(CategoriasRequestDTO categoria) {
+        if (!verifyFields(categoria)) {
+            throw new RequestException("Erro ao salvar a categoria: campos inválidos");
         }
+
+        if (repository.findByNome(categoria.getNome()) != null) {
+            throw new RequestException("Erro, a categoria: " + categoria.getNome() + " já está registrada!");
+        }
+
         Categorias entity = repository.save(converter.paraCategoriasVindoDeCategoriasRequestDTO(categoria));
         return converter.paraCategoriasResponseDTOVindoDeCategorias(entity);
     }
 
-    public List<CategoriasResponseDTO> listaProdutos(){
+    public List<CategoriasResponseDTO> listaProdutos() {
         return converter.paraListaCategoriasResponseDTOVindoDeListaCategorias(repository.findAll());
     }
 
