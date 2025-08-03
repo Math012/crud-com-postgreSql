@@ -1,5 +1,8 @@
 # Resolução 04 - CRUD com PostgreSql
 
+## Swagger
+
+http://localhost:8080/swagger-ui/index.html#
 
 ## Entrada e saída de dados
 
