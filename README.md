@@ -199,6 +199,8 @@ http://localhost:8080/swagger-ui/index.html#
 
 ## Docker
 
+- Para rodar o projeto é preciso criar a rede: "minha-rede" ou alterar o docker-compose.yml
+  
 - docker-compose para baixar o projeto do docker hub: https://hub.docker.com/r/math012i/crud-postgressql-app/tags
 
 ```yaml
